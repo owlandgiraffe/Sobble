@@ -1,8 +1,10 @@
 SOBBLE
 =======
-The Little Sonos Control
-------------------------
+**The Little Sonos Control**
 Version 0.1b
+
+## INTRODUCTION
+Sobble is an application built for the Pebble watch, allowing Sonos users to control their Sonos Wireless Speakers from their wrist.
 
 ### INSTALLATION
 Visit ___ for instructions to install the application via your Pebble phone app.
@@ -18,7 +20,7 @@ The primary features of Sobble (as of v0.1b) are:
 - 'Auto-find' is limited to 1-255 standard IP range. It's possible that your Sonos isn't running on this range so Sobble will currently not locate this
 - UI is built on the basic SimplyJS views available
 
-## FEATURE PRIORITIES
+### FEATURE PRIORITIES
 
 1. Remove dependancy on SimplyJS
 2. Improve and update UI 
@@ -41,7 +43,7 @@ The index.html file is a test frame to execute calls via the browser. In order t
 Please log any issues at the link below with a clear description of the problem, including handset type, handset version, Pebble version, Pebble OS, etc.
 https://github.com/owlandgiraffe/Sobble/issues
 
-#### THANKS
+### THANKS
 A number of thanks are needed for pulling references during the beta build:
 - http://simplyjs.io/
 - https://github.com/rahims/SoCo/
