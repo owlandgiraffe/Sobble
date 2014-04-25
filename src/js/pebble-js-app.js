@@ -458,9 +458,11 @@ var Sobble = (function () {
 })();
 
 if(simply === undefined) {
+    // Not on Pebble
     Sobble.init();
+    
 } else {
- 
+    // On Pebble
     function resetScreen() {
         var sub = Sobble.isActiveSonosZonePlaying() ? "Playing" : "Paused";
         if(sub === "Playing") {
@@ -484,9 +486,15 @@ if(simply === undefined) {
         resetScreen();   
     }
     
+    function start() {
+        simply.off('singleClick', start);
+        setup();
+        resetScreen();
+    }
+    
     function setup() {
         simply.on('singleClick', function(e) {
-          console.log(util2.format('single clicked $button!', e));
+            console.log(util2.format('single clicked $button!', e));
             switch(e.button) {
                 case "up" :
                     Sobble.setNextSonosZoneAsActive();
@@ -510,7 +518,7 @@ if(simply === undefined) {
                 case "down" :
                     Sobble.toggleMuteStateofActiveSonosZone();
                     break;
-                }
+            }
             resetScreen();
             }
         );
@@ -522,16 +530,12 @@ if(simply === undefined) {
         body: 'Play, pause, skip and more from your Pebble to your Sonos. (BETA release)',
     }, true);
     
-    var a;
     Sobble.init(
         function() {
-            setup();
-            setTimeout(resetScreen, 3000);
-            a = setInterval(poll, 5000); // Update screen for changes
+            simply.on('singleClick', start);
         }
     );
     
     simply.scrollable(false);
     simply.fullscreen(true);
-    
 }
