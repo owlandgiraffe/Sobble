@@ -1,9 +1,8 @@
 SOBBLE
 =======
 **The Little Sonos Control**
-Version 0.1b
+(Version 0.1b)
 
-## INTRODUCTION
 Sobble is an application built for the Pebble watch, allowing Sonos users to control their Sonos Wireless Speakers from their wrist.
 
 ### INSTALLATION
